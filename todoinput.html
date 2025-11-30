@@ -14,19 +14,19 @@
     </header>
     <main>
 
-        <table>
+        <table class="table1">
             <tr>
-                <td>登録日</td>
-                <td colspan="3">Todo内容</td>
-                <td>Todo期限</td>
-                <td>済</td>
+                <td class="head">登録日</td>
+                <td colspan="3" class="head">Todo内容</td>
+                <td class="head">Todo期限</td>
+                <td class="head">済</td>
                 <td rowspan="6">
-                    <table>
+                    <table class="table1">
                         <tr>
-                            <td>項番</td>
-                            <td>内容記入欄</td>
-                            <td>期限欄</td>
-                            <td>済</td>
+                            <td class="head">項番</td>
+                            <td class="head">内容記入欄</td>
+                            <td class="head">期限欄</td>
+                            <td class="head">済</td>
                         </tr>
                         <tr>
                             <td>1</td>
@@ -99,10 +99,10 @@
                 <td><input type="checkbox" id="todosumi" class="clr" /></td>
             </tr>
             <tr>
-                <td>テンプレ化</td>
-                <td>テンプレタイトル</td>
-                <td>テーマカラー</td>
-                <td colspan="3">担当者</td>
+                <td class="head">テンプレ化</td>
+                <td class="head">テンプレタイトル</td>
+                <td class="head">テーマカラー</td>
+                <td colspan="3" class="head">担当者</td>
             </tr>
             <tr>
                 <td><input type="checkbox" id="templck" class="clr" /></td>
@@ -111,7 +111,7 @@
                 <td colspan="3"><input type="text" id="tantou" size="15" class="clr" /></td>
             </tr>
             <tr>
-                <td colspan="6">説明欄</td>
+                <td colspan="6" class="head">説明欄</td>
             </tr>
             <td colspan="6"><textarea name="tododetail" id="tododetail" class="clr"></textarea></td>
         </table>
@@ -120,10 +120,10 @@
         <button id="save">登録</button>
         <button id="reset">リセット</button>
         <button id="deltodo">削除</button>
-
-        <button onclick="location.href='todolist.html'">todo一覧へ</button>
-        <button onclick="location.href='index.html'">indexへ</button>
-
+        <div class="linkbot">
+            <button onclick="location.href='todolist.html'" class="tolink">todo一覧へ</button>
+            <button onclick="location.href='index.html'" class="tolink">indexへ</button>
+        </div>
     </main>
     <!-- <main>
         <input id="key" type="text">
