@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>課題：メモ帳？</title>
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <link rel="stylesheet" href="css/sample.css">
+</head>
+
+<body>
+    <header>
+        <h1>TODO list表示画面</h1>
+    </header>
+    <main>
+        <!-- <table>
+            <tr>
+                <td>担当者：</td>
+                <td>TODO期限/登録日</td>
+                <td>from日</td>
+                <td>to日</td>
+            </tr>
+        </table> -->
+
+        <!-- <table id="list">
+            <tr>
+                <th>作業内容</th>
+                <th>TODO名</th>
+                <th>作業期限</th>
+                <th>TODO期限</th>
+                <th>済</th>
+                <th>管理番号</th>
+            </tr> -->
+
+
+        </table>
+
+        <table id="alllist">
+            <tr>
+                <th>TODONO</th>
+                <th>TODO名</th>
+                <th>TODO期限</th>
+                <th>全タスク数</th>
+            </tr>
+
+            <tr>
+                <td><a href="todoinput.html?todono=1">1</a></td>
+                <td><input type="text" id="todotext01" size="40" value="" class="clr" /></td>
+                <td><input type="date" id="todolimit01" class="clr" /></td>
+                <td><span id="tasks01"></span></td>
+            </tr>
+            <tr>
+                <td><a href="todoinput.html?todono=2">2</a></td>
+                <td><input type="text" id="todotext02" size="40" value="" class="clr" /></td>
+                <td><input type="date" id="todolimit02" class="clr" /></td>
+                <td><span id="tasks02"></span></td>
+            </tr>
+            <tr>
+                <td><a href="todoinput.html?todono=3">3</a></td>
+                <td><input type="text" id="todotext03" size="40" value="" class="clr" /></td>
+                <td><input type="date" id="todolimit03" class="clr" /></td>
+                <td><span id="tasks03"></span></td>
+            </tr>
+            <tr>
+                <td><a href="todoinput.html?todono=4">4</a></td>
+                <td><input type="text" id="todotext04" size="40" value="" class="clr" /></td>
+                <td><input type="date" id="todolimit04" class="clr" /></td>
+                <td><span id="tasks04"></span></td>
+            </tr>
+            <tr>
+                <td><a href="todoinput.html?todono=5">5</a></td>
+                <td><input type="text" id="todotext05" size="40" value="" class="clr" /></td>
+                <td><input type="date" id="todolimit05" class="clr" /></td>
+                <td><span id="tasks05"></span></td>
+            </tr>
+            <tr>
+                <td><a href="todoinput.html?todono=6">6</a></td>
+                <td><input type="text" id="todotext06" size="40" value="" class="clr" /></td>
+                <td><input type="date" id="todolimit06" class="clr" /></td>
+                <td><span id="tasks06"></span></td>
+            </tr>
+            <tr>
+                <td><a href="todoinput.html?todono=7">7</a></td>
+                <td><input type="text" id="todotext07" size="40" value="" class="clr" /></td>
+                <td><input type="date" id="todolimit07" class="clr" /></td>
+                <td><span id="tasks07"></span></td>
+            </tr>
+            <tr>
+                <td><a href="todoinput.html?todono=8">8</a></td>
+                <td><input type="text" id="todotext08" size="40" value="" class="clr" /></td>
+                <td><input type="date" id="todolimit08" class="clr" /></td>
+                <td><span id="tasks08"></span></td>
+            </tr>
+            <tr>
+                <td><a href="todoinput.html?todono=9">9</a></td>
+                <td><input type="text" id="todotext09" size="40" value="" class="clr" /></td>
+                <td><input type="date" id="todolimit09" class="clr" /></td>
+                <td><span id="tasks09"></span></td>
+            </tr>
+            <tr>
+                <td><a href="todoinput.html?todono=10">10</a></td>
+                <td><input type="text" id="todotext10" size="40" value="" class="clr" /></td>
+                <td><input type="date" id="todolimit10" class="clr" /></td>
+                <td><span id="tasks10"></span></td>
+            </tr>
+        </table>
+
+
+    </main>
+
+    <script>
+        let todo01count = 0;
+        let todo02count = 0;
+        let todo03count = 0;
+        let todo04count = 0;
+        let todo05count = 0;
+        let todo06count = 0;
+        let todo07count = 0;
+        let todo08count = 0;
+        let todo09count = 0;
+        let todo10count = 0;
+
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i); //KEY名を取得
+            const storagevalue = localStorage.getItem(key); //Valueを取得
+            const partBeforeUnderscore = key.split('_')[0];
+            const partAferUnderscore = key.split('_')[1];
+            if (partBeforeUnderscore == 1) {
+                if (partAferUnderscore == "todotext") {
+                    todotext01.value = storagevalue;
+                }
+                if (partAferUnderscore == "todolimit") {
+                    todolimit01.value = storagevalue;
+                }
+                if (key && partAferUnderscore.startsWith("meitxt") && storagevalue != "") {
+                    todo01count++;
+                    console.log(todo01count);
+                    $("#tasks01").html(todo01count);
+                }
+            }
+            if (partBeforeUnderscore == 2) {
+                if (partAferUnderscore == "todotext") {
+                    todotext02.value = storagevalue;
+                }
+                if (partAferUnderscore == "todolimit") {
+                    todolimit02.value = storagevalue;
+                }
+                if (key && partAferUnderscore.startsWith("meitxt") && storagevalue != "") {
+                    todo02count++;
+                    console.log(todo02count);
+                    $("#tasks02").html(todo02count);
+                }
+
+            }
+            if (partBeforeUnderscore == 3) {
+                if (partAferUnderscore == "todotext") {
+                    todotext03.value = storagevalue;
+                }
+                if (partAferUnderscore == "todolimit") {
+                    todolimit03.value = storagevalue;
+                }
+                if (key && partAferUnderscore.startsWith("meitxt") && storagevalue != "") {
+                    todo03count++;
+                    console.log(todo03count);
+                    $("#tasks03").html(todo03count);
+                }
+            }
+            if (partBeforeUnderscore == 4) {
+                if (partAferUnderscore == "todotext") {
+                    todotext04.value = storagevalue;
+                }
+                if (partAferUnderscore == "todolimit") {
+                    todolimit04.value = storagevalue;
+                }
+                if (key && partAferUnderscore.startsWith("meitxt") && storagevalue != "") {
+                    todo04count++;
+                    console.log(todo04count);
+                    $("#tasks04").html(todo04count);
+                }
+            }
+            if (partBeforeUnderscore == 5) {
+                if (partAferUnderscore == "todotext") {
+                    todotext05.value = storagevalue;
+                }
+                if (partAferUnderscore == "todolimit") {
+                    todolimit05.value = storagevalue;
+                }
+                if (key && partAferUnderscore.startsWith("meitxt") && storagevalue != "") {
+                    todo05count++;
+                    console.log(todo05count);
+                    $("#tasks05").html(todo05count);
+                }
+            }
+            if (partBeforeUnderscore == 6) {
+                if (partAferUnderscore == "todotext") {
+                    todotext06.value = storagevalue;
+                }
+                if (partAferUnderscore == "todolimit") {
+                    todolimit06.value = storagevalue;
+                }
+                if (key && partAferUnderscore.startsWith("meitxt") && storagevalue != "") {
+                    todo06count++;
+                    console.log(todo06count);
+                    $("#tasks06").html(todo06count);
+                }
+            }
+            if (partBeforeUnderscore == 7) {
+                if (partAferUnderscore == "todotext") {
+                    todotext07.value = storagevalue;
+                }
+                if (partAferUnderscore == "todolimit") {
+                    todolimit07.value = storagevalue;
+                }
+                if (key && partAferUnderscore.startsWith("meitxt") && storagevalue != "") {
+                    todo07count++;
+                    console.log(todo07count);
+                    $("#tasks07").html(todo07count);
+                }
+            }
+            if (partBeforeUnderscore == 8) {
+                if (partAferUnderscore == "todotext") {
+                    todotext08.value = storagevalue;
+                }
+                if (partAferUnderscore == "todolimit") {
+                    todolimit08.value = storagevalue;
+                }
+                if (key && partAferUnderscore.startsWith("meitxt") && storagevalue != "") {
+                    todo08count++;
+                    console.log(todo08count);
+                    $("#tasks08").html(todo08count);
+                }
+            }
+            if (partBeforeUnderscore == 9) {
+                if (partAferUnderscore == "todotext") {
+                    todotext09.value = storagevalue;
+                }
+                if (partAferUnderscore == "todolimit") {
+                    todolimit09.value = storagevalue;
+                }
+                if (key && partAferUnderscore.startsWith("meitxt") && storagevalue != "") {
+                    todo09count++;
+                    console.log(todo09count);
+                    $("#tasks09").html(todo09count);
+                }
+            }
+            if (partBeforeUnderscore == 10) {
+                if (partAferUnderscore == "todotext") {
+                    todotext10.value = storagevalue;
+                }
+                if (partAferUnderscore == "todolimit") {
+                    todolimit10.value = storagevalue;
+                }
+                if (key && partAferUnderscore.startsWith("meitxt") && storagevalue != "") {
+                    todo10count++;
+                    console.log(todo10count);
+                    $("#tasks010").html(todo10count);
+                }
+            }
+        }
+
+    </script>
+    <footer><small>G's 課題 「メモ帳？」 by もりしん</small></footer>
+</body>
+
+</html>
