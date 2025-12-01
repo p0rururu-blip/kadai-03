@@ -170,6 +170,11 @@
                         inputElement.value = storagevalue;
                         console.log(`Key "${key}" processed. Set input #${partAferUnderscore} value to "${storagevalue}".`);
                     }
+                    if (inputElement && inputElement.type == "checkbox" && storagevalue == "true") {
+                        inputElement.checked = true;
+                        console.log(`Key "${key}" processed. Set input #${partAferUnderscore} value to "${storagevalue}".`);
+                    }
+
                 }
             };
 
@@ -199,13 +204,13 @@
             const numtodolimit = `${todono_}_todolimit`;
             localStorage.setItem(numtodolimit, todolimit.value);
 
-            const todosumi_ = document.getElementById("todosumi").value;
+            const todosumi_ = document.getElementById('todosumi');
             const numtodosumi = `${todono_}_todosumi`;
-            localStorage.setItem(numtodosumi, todosumi.value);
+            localStorage.setItem(numtodosumi, todosumi.checked);
 
-            const templck_ = document.getElementById("templck").value;
+            const templck_ = document.getElementById("templck");
             const numtemplck = `${todono_}_templck`;
-            localStorage.setItem(numtemplck, templck.value);
+            localStorage.setItem(numtemplck, templck.checked);
 
             const temptext_ = document.getElementById("temptext").value;
             const numtemptext = `${todono_}_temptext`;
@@ -229,9 +234,9 @@
             const meilimit01_ = document.getElementById("meilimit01").value;
             const nummeilimit01 = `${todono_}_meilimit01`;
             localStorage.setItem(nummeilimit01, meilimit01.value);
-            const meisumi01_ = document.getElementById("meisumi01").value;
+            const meisumi01_ = document.getElementById("meisumi01");
             const nummeisumi01 = `${todono_}_meisumi01`;
-            localStorage.setItem(nummeisumi01, meisumi01.value);
+            localStorage.setItem(nummeisumi01, meisumi01.checked);
 
             const meitxt02_ = document.getElementById("meitxt02").value;
             const nummeitxt02 = `${todono_}_meitxt02`;
@@ -239,9 +244,9 @@
             const meilimit02_ = document.getElementById("meilimit02").value;
             const nummeilimit02 = `${todono_}_meilimit02`;
             localStorage.setItem(nummeilimit02, meilimit02.value);
-            const meisumi02_ = document.getElementById("meisumi02").value;
+            const meisumi02_ = document.getElementById("meisumi02");
             const nummeisumi02 = `${todono_}_meisumi02`;
-            localStorage.setItem(nummeisumi02, meisumi02.value);
+            localStorage.setItem(nummeisumi02, meisumi02.checked);
 
             const meitxt03_ = document.getElementById("meitxt03").value;
             const nummeitxt03 = `${todono_}_meitxt03`;
@@ -249,9 +254,9 @@
             const meilimit03_ = document.getElementById("meilimit03").value;
             const nummeilimit03 = `${todono_}_meilimit03`;
             localStorage.setItem(nummeilimit03, meilimit03.value);
-            const meisumi03_ = document.getElementById("meisumi03").value;
+            const meisumi03_ = document.getElementById("meisumi03");
             const nummeisumi03 = `${todono_}_meisumi03`;
-            localStorage.setItem(nummeisumi03, meisumi03.value);
+            localStorage.setItem(nummeisumi03, meisumi03.checked);
 
             const meitxt04_ = document.getElementById("meitxt04").value;
             const nummeitxt04 = `${todono_}_meitxt04`;
@@ -259,9 +264,9 @@
             const meilimit04_ = document.getElementById("meilimit04").value;
             const nummeilimit04 = `${todono_}_meilimit04`;
             localStorage.setItem(nummeilimit04, meilimit04.value);
-            const meisumi04_ = document.getElementById("meisumi04").value;
+            const meisumi04_ = document.getElementById("meisumi04");
             const nummeisumi04 = `${todono_}_meisumi04`;
-            localStorage.setItem(nummeisumi04, meisumi04.value);
+            localStorage.setItem(nummeisumi04, meisumi04.checked);
 
             const meitxt05_ = document.getElementById("meitxt05").value;
             const nummeitxt05 = `${todono_}_meitxt05`;
@@ -269,9 +274,9 @@
             const meilimit05_ = document.getElementById("meilimit05").value;
             const nummeilimit05 = `${todono_}_meilimit05`;
             localStorage.setItem(nummeilimit05, meilimit05.value);
-            const meisumi05_ = document.getElementById("meisumi05").value;
+            const meisumi05_ = document.getElementById("meisumi05");
             const nummeisumi05 = `${todono_}_meisumi05`;
-            localStorage.setItem(nummeisumi05, meisumi05.value);
+            localStorage.setItem(nummeisumi05, meisumi05.checked);
 
             const meitxt06_ = document.getElementById("meitxt06").value;
             const nummeitxt06 = `${todono_}_meitxt06`;
@@ -279,9 +284,9 @@
             const meilimit06_ = document.getElementById("meilimit06").value;
             const nummeilimit06 = `${todono_}_meilimit06`;
             localStorage.setItem(nummeilimit06, meilimit06.value);
-            const meisumi06_ = document.getElementById("meisumi06").value;
+            const meisumi06_ = document.getElementById("meisumi06");
             const nummeisumi06 = `${todono_}_meisumi06`;
-            localStorage.setItem(nummeisumi06, meisumi06.value);
+            localStorage.setItem(nummeisumi06, meisumi06.checked);
 
             const meitxt07_ = document.getElementById("meitxt07").value;
             const nummeitxt07 = `${todono_}_meitxt07`;
@@ -289,19 +294,19 @@
             const meilimit07_ = document.getElementById("meilimit07").value;
             const nummeilimit07 = `${todono_}_meilimit07`;
             localStorage.setItem(nummeilimit07, meilimit07.value);
-            const meisumi07_ = document.getElementById("meisumi07").value;
+            const meisumi07_ = document.getElementById("meisumi07");
             const nummeisumi07 = `${todono_}_meisumi07`;
-            localStorage.setItem(nummeisumi07, meisumi07.value);
-            const meitxt08_ = document.getElementById("meitxt08").value;
+            localStorage.setItem(nummeisumi07, meisumi07.checked);
 
+            const meitxt08_ = document.getElementById("meitxt08").value;
             const nummeitxt08 = `${todono_}_meitxt08`;
             localStorage.setItem(nummeitxt08, meitxt08.value);
             const meilimit08_ = document.getElementById("meilimit08").value;
             const nummeilimit08 = `${todono_}_meilimit08`;
             localStorage.setItem(nummeilimit08, meilimit08.value);
-            const meisumi08_ = document.getElementById("meisumi08").value;
+            const meisumi08_ = document.getElementById("meisumi08");
             const nummeisumi08 = `${todono_}_meisumi08`;
-            localStorage.setItem(nummeisumi08, meisumi08.value);
+            localStorage.setItem(nummeisumi08, meisumi08.checked);
 
             const meitxt09_ = document.getElementById("meitxt09").value;
             const nummeitxt09 = `${todono_}_meitxt09`;
@@ -309,9 +314,9 @@
             const meilimit09_ = document.getElementById("meilimit09").value;
             const nummeilimit09 = `${todono_}_meilimit09`;
             localStorage.setItem(nummeilimit09, meilimit09.value);
-            const meisumi09_ = document.getElementById("meisumi09").value;
+            const meisumi09_ = document.getElementById("meisumi09");
             const nummeisumi09 = `${todono_}_meisumi09`;
-            localStorage.setItem(nummeisumi09, meisumi09.value);
+            localStorage.setItem(nummeisumi09, meisumi09.checked);
 
             const meitxt10_ = document.getElementById("meitxt10").value;
             const nummeitxt10 = `${todono_}_meitxt10`;
@@ -319,9 +324,9 @@
             const meilimit10_ = document.getElementById("meilimit10").value;
             const nummeilimit10 = `${todono_}_meilimit10`;
             localStorage.setItem(nummeilimit10, meilimit10.value);
-            const meisumi10_ = document.getElementById("meisumi10").value;
+            const meisumi10_ = document.getElementById("meisumi10");
             const nummeisumi10 = `${todono_}_meisumi10`;
-            localStorage.setItem(nummeisumi10, meisumi10.value);
+            localStorage.setItem(nummeisumi10, meisumi10.checked);
         });
 
 
@@ -333,6 +338,9 @@
                 // input, textarea, select要素に対応
                 if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA' || element.tagName === 'SELECT') {
                     element.value = '';
+                }
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA' || element.tagName === 'SELECT') {
+                    element.checked = false;
                 }
             });
             todocolor.value = "#000000";
@@ -350,6 +358,10 @@
                     }
                     if (inputElement && inputElement.tagName.toLowerCase() === "textarea") {
                         inputElement.value = storagevalue;
+                        console.log(`Key "${key}" processed. Set input #${partAferUnderscore} value to "${storagevalue}".`);
+                    }
+                    if (inputElement && inputElement.type == "checkbox" && storagevalue == "true") {
+                        inputElement.checked = true;
                         console.log(`Key "${key}" processed. Set input #${partAferUnderscore} value to "${storagevalue}".`);
                     }
                 }
